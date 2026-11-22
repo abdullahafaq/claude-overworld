@@ -3,7 +3,7 @@
 // pretend they aren't watching you.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, light, rect, ridge, specks, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, light, rect, ridge, specks, svg, terrain } from '../pixels'
 import { chorus } from '../props'
 
 function tower(x: number, top: number, w: number): string {
@@ -36,7 +36,7 @@ export function end(still = false): string {
     `<path d="M590 404 L1100 760" stroke="#f0d0ff" stroke-width="3" opacity="0.25" class="breathe"/>` +
     light(defs, 800, 720, 600, '#7a5aaa', 0.2) +
     ridge([150, 160, 170, 170, 180, 180, 190, 190, 190, 200, 200, 190, 190, 180, 180, 170, 160, 150, 150, 140], '#cfcb98', GROUND + 10) +
-    rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#d8d4a2') + rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#281846', 'opacity="0.35"') +
+    terrain(defs, { top: '#e4e0b0', topDark: '#c4c08c', soil: '#d8d4a2', specks: ['#ccc896', '#e2deac', '#c2be8a'] }, 71) + rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#281846', 'opacity="0.35"') +
     chorus(760, GROUND, 150) + chorus(880, GROUND, 110) + chorus(430, GROUND, 96) + chorus(1520, GROUND, 120) +
     mob('enderman', MOB_LEFT + 20, GROUND, 5, 0) + mob('enderman', MOB_LEFT + 110, GROUND, 4, 1.8)
 

@@ -1,8 +1,8 @@
 {
   "name": "claude-overworld",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "Eight pixel biomes behind your Claude Code chat, and every subagent as a mob.",
+  "description": "Ten pixel biomes behind your Claude Code chat, and every subagent as a mob.",
   "license": "MIT",
   "author": "Abdullah Afaq (https://github.com/abdullahafaq)",
   "homepage": "https://abdullahafaq.github.io/claude-overworld/",

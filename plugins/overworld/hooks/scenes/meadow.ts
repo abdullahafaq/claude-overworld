@@ -2,7 +2,7 @@
 // house, flowers, a cat stretching and a bee doing its rounds.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, light, rect, ridge, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, hills, light, rect, svg, terrain } from '../pixels'
 import { house, tree } from '../props'
 
 function cloud(x: number, y: number, w: number): string {
@@ -20,16 +20,16 @@ export function meadow(still = false): string {
     rect(0, 0, WIDTH, HEIGHT, sky) +
     light(defs, 1240, 260, 260, '#fff6d8', 0.9) + rect(1196, 216, 88, 88, '#fff8e2') +
     `<g class="drift">${clouds}<g transform="translate(1600 0)">${clouds}</g></g>` +
-    ridge(heights(25, 330, 110, 5), '#c6d7d6') +
+    hills(defs, heights(25, 330, 110, 5), '#c6d7d6', '#d6e3e1', 5) +
     light(defs, 800, 640, 700, '#ffffff', 0.25) +
-    ridge(heights(25, 250, 80, 9), '#a5c7a0') +
-    ridge(heights(20, 180, 48, 13), '#8bbb80') +
+    hills(defs, heights(25, 250, 80, 9), '#a5c7a0', '#b8d6b0', 9) +
+    hills(defs, heights(20, 180, 48, 13), '#8bbb80', '#9fcc92', 13) +
     tree(380, GROUND, 1.2, '#7a5a3e', '#5e9c55', '#74b268') +
     tree(1440, GROUND, 1.0, '#7a5a3e', '#5e9c55', '#74b268') +
     house(860, GROUND) +
-    rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#9a7656') + rect(0, GROUND, WIDTH, 14, '#7fb86a') + rect(0, GROUND + 14, WIDTH, 6, '#68a157') +
+    terrain(defs, { top: '#7fb86a', topDark: '#5f9a4c', soil: '#9a7656', specks: ['#8a6a4c', '#a8845f', '#7f6044'], tufts: '#6aa858' }, 5) +
     flowers +
     mob('cat', MOB_LEFT, GROUND, 6, 0) + mob('bee', MOB_LEFT + 110, GROUND - 60, 6, 1.1)
 
-  return svg('Meadow: a sunny morning in the plains, clouds drifting over green hills, a little house, a cat and a bee', defs, body, still)
+  return svg('Meadow: a sunny morning in the plains, clouds drifting over green hills, a little house, a cat and a bee', defs, body, still, 0.16)
 }

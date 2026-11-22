@@ -11,15 +11,19 @@
       alt: 'Sakura Night: cherry trees under a pink moon, swaying lanterns and drifting petals, a fox and a frog by a pond' },
     { id: 'meadow', title: 'Meadow', blurb: 'Green · light. A sunny morning in the plains, for the light mode people.', tint: '#f2f6f0', op: 0.62, accent: '#1f5e35', glow: '#8fd08a', add: '#1f5e35', del: '#9c2c24', shades: ['#eef3ec', '#f5f8f3', '#ffffff', '#17211a', '#3a4a3e', '#4b5a50'], light: true,
       alt: 'Meadow: a sunny morning in the plains, clouds drifting over green hills, a little house, a cat and a bee' },
+    { id: 'jungle', title: 'Jungle', blurb: 'Green · dark. Giant trees, vines and bamboo, a mossy temple, a panda and a parrot.', tint: '#0b130c', op: 0.56, accent: '#a6e06a', glow: '#a6e06a', add: '#7fd8b0', del: '#ff8a8a', shades: ['#0b130c', '#101a11', '#152216', '#e8f2e6', '#c2d6be', '#9fb89a'],
+      alt: 'Jungle: giant jungle trees with swaying vines, bamboo, a mossy temple and fireflies, a panda and a parrot' },
     { id: 'desert', title: 'Desert Night', blurb: 'Gold · dark. Stars over the dunes, a temple, and a creeper near a cat.', tint: '#14110b', op: 0.56, accent: '#f0c060', glow: '#f0c060', add: '#9ed6a6', del: '#ff8a8a', shades: ['#14110b', '#1b170f', '#231e14', '#f5ecd9', '#d8cbb0', '#b5a88c'],
       alt: 'Desert Night: a starry sky over the dunes, a temple with candles, cacti, a creeper and a cat' },
+    { id: 'badlands', title: 'Badlands', blurb: 'Orange · dark. Striped mesas at sunset, an old mineshaft and an armadillo.', tint: '#160e0a', op: 0.56, accent: '#f2955a', glow: '#f2955a', add: '#9ed69a', del: '#ff8a8a', shades: ['#160e0a', '#1e130e', '#271912', '#f6ebe2', '#dccabd', '#bba594'],
+      alt: 'Badlands: banded terracotta mesas at sunset, an old mineshaft and dead bushes, an armadillo and a wolf' },
     { id: 'aurora', title: 'Aurora', blurb: 'Mint · dark. Northern lights over the snowy taiga.', tint: '#0b1014', op: 0.56, accent: '#8fe8c0', glow: '#8fe8c0', add: '#a6e08a', del: '#ff8a8a', shades: ['#0b1014', '#10171c', '#162026', '#e8f3f2', '#c0d4d2', '#9db5b3'],
       alt: 'Aurora: northern lights rippling over snowy peaks, spruces and an igloo, a snow fox and a wolf in the snow' },
     { id: 'ocean', title: 'Ocean', blurb: 'Blue · dark. Sunbeams on the sea floor, a shipwreck and a glow squid.', tint: '#08111f', op: 0.56, accent: '#7ab8ff', glow: '#7ab8ff', add: '#8fd6a2', del: '#ff8a8a', shades: ['#08111f', '#0d1828', '#122033', '#e8f0fa', '#bfcde0', '#9db0c8'],
       alt: 'Ocean: sunbeams through the water, kelp, coral and a shipwreck on the sea floor, an axolotl and a glow squid' },
     { id: 'end', title: 'The End', blurb: 'Violet · dark. End cities, crystal pillars and a dragon passing over.', tint: '#0e0b16', op: 0.56, accent: '#c7aaff', glow: '#c7aaff', add: '#9ed6a6', del: '#f08a9a', shades: ['#0e0b16', '#14101f', '#1a1528', '#eeeaf7', '#c7bfdc', '#a59cbf'],
       alt: 'The End: glowing end city towers, crystal pillars, chorus plants, a dragon gliding past and two endermen' },
-    { id: 'nether', title: 'Nether', blurb: 'Red · dark. A fortress bridge over lava, crimson fungi and a ghast.', tint: '#150c0b', op: 0.56, accent: '#ffa27a', glow: '#ffa27a', add: '#9ed69a', del: '#ff8a8a', shades: ['#150c0b', '#1d1110', '#251715', '#f3e9e6', '#d3c2bd', '#b5a099'],
+    { id: 'nether', title: 'Nether', blurb: 'Crimson · dark. A fortress bridge over lava, crimson fungi and a ghast.', tint: '#150c0b', op: 0.56, accent: '#ff7a85', glow: '#ff7a85', add: '#9ed69a', del: '#ffa08a', shades: ['#150c0b', '#1d1110', '#251715', '#f3e9e6', '#d3c2bd', '#b5a099'],
       alt: 'Nether: a fortress bridge over lava falls, glowing crimson fungi, a ghast in the haze, a strider and a magma cube' },
     { id: 'deep', title: 'Deep Dark', blurb: 'Black · dark. An ancient city, soul lanterns and the warden. Shh.', tint: '#0a0b0c', op: 0.6, accent: '#5fd3c8', glow: '#5fd3c8', add: '#8fd6a2', del: '#f08a8a', shades: ['#0a0b0c', '#101213', '#16191b', '#e8ecec', '#bcc4c5', '#99a3a5'],
       alt: 'Deep Dark: an ancient city lit by soul lanterns and candles, sculk on the floor and the warden standing in the dark' },
@@ -187,7 +191,7 @@
 
   chips.forEach(chip => chip.addEventListener('click', () => choose(chip, false)))
 
-  // Radio-group keys: arrows move along the hotbar (and wrap), Home/End jump to the ends, 1 to 8 pick a slot.
+  // Radio-group keys: arrows move along the hotbar (and wrap), Home/End jump to the ends, 1 to 9 and 0 pick a slot, like a real hotbar.
   picker.addEventListener('keydown', e => {
     const i = chips.indexOf(document.activeElement)
     if (i < 0) return
@@ -196,7 +200,7 @@
     else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + chips.length) % chips.length
     else if (e.key === 'Home') n = 0
     else if (e.key === 'End') n = chips.length - 1
-    else if (/^[1-8]$/.test(e.key)) n = Number(e.key) - 1
+    else if (/^[0-9]$/.test(e.key)) n = Math.min(chips.length - 1, e.key === '0' ? 9 : Number(e.key) - 1)
     if (n < 0) return
     e.preventDefault()
     choose(chips[n], true)

@@ -2,7 +2,7 @@
 // sculk creeping across the floor, and the warden, whose heart you can see beating. Shh.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, ceiling, heights, light, rect, specks, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, ceiling, heights, light, rect, specks, svg, terrain } from '../pixels'
 import { candle, soulLantern } from '../props'
 
 function city(): string {
@@ -35,7 +35,7 @@ export function deep(still = false): string {
     light(defs, 668, 560, 260, '#5fd3c8', 0.08) +
     city() +
     soulLantern(defs, 470, 308, 44, 0) + soulLantern(defs, 852, 308, 70, 1.4) + soulLantern(defs, 1390, 392, 56, 2.6) +
-    rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#0f1213') +
+    terrain(defs, { top: '#1e2529', topDark: '#151b1e', soil: '#0f1213', specks: ['#14181a', '#0b0e0f', '#191d20'] }, 61) +
     sculk(defs) + shrieker +
     candle(defs, 580, GROUND, 0) + candle(defs, 620, GROUND, 0.8) + candle(defs, 740, GROUND, 1.7) +
     `<g class="pulse" style="animation-duration:2.4s">${light(defs, MOB_LEFT + 84, GROUND - 74, 110, '#4fe3d6', 0.3)}</g>` +

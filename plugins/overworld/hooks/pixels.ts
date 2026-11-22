@@ -103,9 +103,75 @@ export class Defs {
     return `url(#${id})`
   }
 
+  /** A tiling pixel texture: a base colour with specks scattered on a `cell` grid. Returns a fill. */
+  texture(base: string, specks: readonly string[], seed: number, cell = 4, size = 32): string {
+    const id = `t${this.count++}`
+    let dots = ''
+    const count = Math.round((size / cell) ** 2 * 0.22)
+    for (let i = 0; i < count; i += 1) {
+      const x = Math.floor(hash(seed, i * 2) * (size / cell)) * cell
+      const y = Math.floor(hash(seed, i * 2 + 1) * (size / cell)) * cell
+      dots += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" fill="${specks[i % specks.length]}"/>`
+    }
+    this.parts.push(`<pattern id="${id}" width="${size}" height="${size}" patternUnits="userSpaceOnUse"><rect width="${size}" height="${size}" fill="${base}"/>${dots}</pattern>`)
+    return `url(#${id})`
+  }
+
+  /** A see-through speckle laid over flat shapes so they read as blocks instead of plastic. */
+  dither(seed: number, light = 'rgba(255,255,255,0.05)', dark = 'rgba(0,0,0,0.12)'): string {
+    return this.texture('none', [dark, light, dark], seed, 6, 48)
+  }
+
+  /** A faint block grid, 32px squares. */
+  grid(colour = 'rgba(0,0,0,0.16)'): string {
+    const id = `k${this.count++}`
+    this.parts.push(`<pattern id="${id}" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="2" fill="${colour}"/><rect width="2" height="32" fill="${colour}"/></pattern>`)
+    return `url(#${id})`
+  }
+
   toString(): string {
     return this.parts.join('')
   }
+}
+
+/** Hills drawn as blocks: the silhouette, a lighter cap along each step's top, and a speckle on top. */
+export function hills(defs: Defs, heightList: readonly number[], fill: string, cap: string, seed: number, base = HEIGHT): string {
+  const step = WIDTH / heightList.length
+  let caps = ''
+  heightList.forEach((h, i) => { caps += rect(i * step, base - h, step, 6, cap) })
+  return ridge(heightList, fill, base) + caps + ridge(heightList, defs.dither(seed), base)
+}
+
+export type Ground = {
+  /** The top layer (grass, sand, snow, nylium…) and its darker underside. */
+  top: string
+  topDark: string
+  /** The block below and the specks that give it texture. */
+  soil: string
+  specks: readonly string[]
+  /** Little blades or pebbles sticking up from the surface; omit for flat ground. */
+  tufts?: string
+}
+
+/**
+ * The ground every biome stands on: a textured block layer with a faint grid, a top layer with a ragged
+ * edge, and a few tufts. Tufts stay clear of the mobs' spot so their feet read cleanly.
+ */
+export function terrain(defs: Defs, g: Ground, seed: number, top = GROUND): string {
+  let out = rect(0, top, WIDTH, HEIGHT - top, defs.texture(g.soil, g.specks, seed)) + rect(0, top, WIDTH, HEIGHT - top, defs.grid())
+  out += rect(0, top, WIDTH, 12, g.top)
+  for (let x = 0; x < WIDTH; x += 8) {
+    const drip = [0, 4, 4, 8, 0, 4][Math.floor(hash(seed + 3, x) * 6)] ?? 0
+    if (drip) out += rect(x, top + 12, 8, drip, g.top)
+    out += rect(x, top + 12 + drip, 8, 4, g.topDark)
+  }
+  if (g.tufts) {
+    for (let x = 12; x < WIDTH; x += 36 + Math.floor(hash(seed + 5, x) * 40)) {
+      if (x > MOB_LEFT - 20 && x < MOB_LEFT + 220) continue
+      out += rect(x, top - 4, 4, 4, g.tufts) + rect(x + 4, top - 8, 4, 8, g.tufts) + rect(x + 8, top - 4, 4, 4, g.tufts)
+    }
+  }
+  return out
 }
 
 /** A soft round light at a point. */
@@ -151,10 +217,12 @@ export const MOTION = `
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.stepB{opacity:0}}
 `
 
-/** The one SVG wrapper every scene uses. `title` is what a screen reader hears. */
-export function svg(title: string, defs: Defs, body: string, still = false): string {
+/** The one SVG wrapper every scene uses. `title` is what a screen reader hears; `vignette` darkens the corners. */
+export function svg(title: string, defs: Defs, body: string, still = false, vignette = 0.34): string {
   const style = still ? `${MOTION}*{animation:none!important}` : MOTION
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${title}"><title>${title}</title><style>${style}</style><defs>${defs}</defs>${body}</svg>`
+  const edge = 'vignette'
+  const shade = `<radialGradient id="${edge}" cx="0.5" cy="0.42" r="0.78"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${vignette}"/></radialGradient>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${title}"><title>${title}</title><style>${style}</style><defs>${defs}${shade}</defs>${body}<rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${edge})"/></svg>`
 }
 
 function round(n: number): number {

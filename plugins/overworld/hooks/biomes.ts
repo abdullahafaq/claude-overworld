@@ -3,9 +3,11 @@
 
 import { PALETTES, type BiomeId } from './palettes'
 import { aurora } from './scenes/aurora'
+import { badlands } from './scenes/badlands'
 import { deep } from './scenes/deep'
 import { desert } from './scenes/desert'
 import { end } from './scenes/end'
+import { jungle } from './scenes/jungle'
 import { meadow } from './scenes/meadow'
 import { nether } from './scenes/nether'
 import { ocean } from './scenes/ocean'
@@ -24,11 +26,13 @@ export type Biome = {
 export const BIOMES: readonly Biome[] = [
   { id: 'sakura', title: 'Sakura Night', blurb: 'Pink · dark. Cherry trees under a pink moon, lanterns and drifting petals.', glass: { tint: '#150f14', opacity: 0.56 }, draw: sakura },
   { id: 'meadow', title: 'Meadow', blurb: 'Green · light. A sunny morning in the plains, for the light mode people.', glass: { tint: '#f2f6f0', opacity: 0.62 }, draw: meadow },
+  { id: 'jungle', title: 'Jungle', blurb: 'Green · dark. Giant trees, vines and bamboo, a mossy temple, a panda and a parrot.', glass: { tint: '#0b130c', opacity: 0.56 }, draw: jungle },
   { id: 'desert', title: 'Desert Night', blurb: 'Gold · dark. Stars over the dunes, a temple, and a creeper near a cat.', glass: { tint: '#14110b', opacity: 0.56 }, draw: desert },
+  { id: 'badlands', title: 'Badlands', blurb: 'Orange · dark. Striped mesas at sunset, an old mineshaft and an armadillo.', glass: { tint: '#160e0a', opacity: 0.56 }, draw: badlands },
   { id: 'aurora', title: 'Aurora', blurb: 'Mint · dark. Northern lights over the snowy taiga.', glass: { tint: '#0b1014', opacity: 0.56 }, draw: aurora },
   { id: 'ocean', title: 'Ocean', blurb: 'Blue · dark. Sunbeams on the sea floor, a shipwreck and a glow squid.', glass: { tint: '#08111f', opacity: 0.56 }, draw: ocean },
   { id: 'end', title: 'The End', blurb: 'Violet · dark. End cities, crystal pillars and a dragon passing over.', glass: { tint: '#0e0b16', opacity: 0.56 }, draw: end },
-  { id: 'nether', title: 'Nether', blurb: 'Red · dark. A fortress bridge over lava, crimson fungi and a ghast.', glass: { tint: '#150c0b', opacity: 0.56 }, draw: nether },
+  { id: 'nether', title: 'Nether', blurb: 'Crimson · dark. A fortress bridge over lava, crimson fungi and a ghast.', glass: { tint: '#150c0b', opacity: 0.56 }, draw: nether },
   { id: 'deep', title: 'Deep Dark', blurb: 'Black · dark. An ancient city, soul lanterns and the warden. Shh.', glass: { tint: '#0a0b0c', opacity: 0.6 }, draw: deep },
 ]
 

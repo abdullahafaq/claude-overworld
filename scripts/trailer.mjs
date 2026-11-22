@@ -1,9 +1,9 @@
-// The trailer: an animated SVG (README + site) cut from the real plugin art. One 48-second loop:
+// The trailer: an animated SVG (README + site) cut from the real plugin art. One 52-second loop:
 //
 //   0.0s   "Generating world": a block progress bar, then the OVERWORLD logo placed block by block
-//   4.6s   the app window. `/overworld <biome>` gets typed, a block wipe swaps the world, eight times
-//   30.2s  the Party pane slides in and agents spawn as mobs; the test runner's creeper goes boom
-//   41.0s  a hotbar of all eight biomes and the install line on a sign
+//   4.6s   the app window. `/overworld <biome>` gets typed, a block wipe swaps the world, once per biome
+//   32.6s  the Party pane slides in and agents spawn as mobs; the test runner's creeper goes boom
+//   44.0s  a hotbar of every biome and the install line on a sign
 //
 // Transitions are block wipes and stepped moves, slow enough to never flicker (every cycle 1s or more).
 // Reduce motion shows the last frame only.
@@ -14,7 +14,7 @@ import { PALETTES } from '../plugins/overworld/hooks/palettes.ts'
 
 const W = 1600
 const H = 900
-const T = 48
+const T = 52
 const SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,system-ui,sans-serif"
 const MONO = "ui-monospace,'SF Mono',Menlo,Consolas,monospace"
 const SKY_TOP = '#0d1330'
@@ -71,11 +71,11 @@ function typing(x, y, chars, charW, from, to) {
   return { clip: `<clipPath id="${c}-clip"><rect class="${c}" x="${x}" y="${y - 24}" width="${full}" height="32"/></clipPath>`, ref: `url(#${c}-clip)` }
 }
 
-/** Scenes go into <defs> once each; their gradient ids get the biome's name so eight can share a file. */
+/** Scenes go into <defs> once each; every id inside gets the biome's name so they can share one file. */
 function sceneSymbol(biome) {
   return biome.draw(false)
-    .replace(/id="([ghv]\d+)"/g, `id="${biome.id}-$1"`)
-    .replace(/url\(#([ghv]\d+)\)/g, `url(#${biome.id}-$1)`)
+    .replace(/id="([^"]+)"/g, `id="${biome.id}-$1"`)
+    .replace(/url\(#([^)]+)\)/g, `url(#${biome.id}-$1)`)
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/ role="img" aria-label="[^"]*"/, '')
     .replace('<svg ', `<svg id="scene-${biome.id}" `)
@@ -133,7 +133,7 @@ function opening(from, to) {
     rect(W / 2 - bar / 2, 460, bar, 32, '#141824', 'stroke="#3c4256" stroke-width="3"') + blocks + '</g>'
   return `<g class="${shown(from, to, true)}">` + loading +
     logo(W / 2 - 432, 300, 16, from + 2.1, to) +
-    `<g class="${stepIn(from + 3.2, to)}">${text(W / 2, 520, 30, '#d9d4f0', 'Your Claude Code chat, in eight pixel biomes.', 'text-anchor="middle"')}</g>` +
+    `<g class="${stepIn(from + 3.2, to)}">${text(W / 2, 520, 30, '#d9d4f0', 'Your Claude Code chat, in ten pixel biomes.', 'text-anchor="middle"')}</g>` +
     '</g>'
 }
 
@@ -284,11 +284,15 @@ function burst(cx, cy, at) {
 
 // ---------------------------------------------------------------- the finale
 
+/** Finale hotbar slot size and gap: ten slots across the frame. */
+const SLOT = 128
+const GAP = 12
+
 function finale(from, to) {
   return `<g class="${shown(from, to)} trfinal">` +
     text(W / 2, 170, 54, CREAM, 'Pick your biome.', 'text-anchor="middle" font-weight="700"') +
-    `<g class="${stepIn(from + 0.4, to)}">${hotbar(W / 2, 250, 150, 14)}</g>` +
-    BIOMES.map((b, i) => `<g class="${stepIn(from + 0.6 + i * 0.08, to, 10)}">${text(W / 2 - (8 * 150 + 7 * 14) / 2 + i * 164 + 75, 436, 14, glow(b.id), b.id, `text-anchor="middle" font-family="${MONO}"`)}</g>`).join('') +
+    `<g class="${stepIn(from + 0.4, to)}">${hotbar(W / 2, 260, SLOT, GAP)}</g>` +
+    BIOMES.map((b, i) => `<g class="${stepIn(from + 0.6 + i * 0.08, to, 10)}">${text(W / 2 - (BIOMES.length * SLOT + (BIOMES.length - 1) * GAP) / 2 + i * (SLOT + GAP) + SLOT / 2, 260 + SLOT + 34, 14, glow(b.id), b.id, `text-anchor="middle" font-family="${MONO}"`)}</g>`).join('') +
     `<g class="${stepIn(from + 1.4, to)}">${sign(W / 2 - 440, 500, 880, 120, [[`<tspan fill="#c8f0a8">/plugin install</tspan> overworld --marketplace abdullahafaq/claude-overworld`, 21, `font-family="${MONO}"`], [`then <tspan fill="#c8f0a8">/overworld</tspan> · free, MIT, looks only`, 17]])}</g>` +
     '</g>'
 }
@@ -296,17 +300,17 @@ function finale(from, to) {
 export function trailer() {
   css = ''
   n = 0
-  const SEG = 3.2
+  const SEG = 2.8
   const tourStart = 4.6
-  const tourEnd = tourStart + SEG * BIOMES.length // 30.2
+  const tourEnd = tourStart + SEG * BIOMES.length // 32.6 with ten biomes
   const body = opening(0, tourStart) +
-    tour(tourStart, 41, SEG) +
-    party(tourEnd, 41) +
-    finale(41, T)
+    tour(tourStart, 44, SEG) +
+    party(tourEnd, 44) +
+    finale(44, T)
 
   const stars = Array.from({ length: 60 }, (_, i) => rect((i * 263) % W, (i * 137) % 640, i % 5 ? 2 : 3, i % 5 ? 2 : 3, '#e8e4ff', `opacity="${0.3 + (i % 4) * 0.15}"`)).join('')
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Overworld trailer: a world generates and the OVERWORLD logo is built block by block; then the command /overworld is typed in a Claude Code window and each of the eight biomes swaps in with a block wipe; then the Party pane slides in and agents spawn as mobs, a creeper blowing up; it ends on a hotbar of all eight biomes and the install command.">` +
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Overworld trailer: a world generates and the OVERWORLD logo is built block by block; then the command /overworld is typed in a Claude Code window and each of the ten biomes swaps in with a block wipe; then the Party pane slides in and agents spawn as mobs, a creeper blowing up; it ends on a hotbar of every biome and the install command.">` +
     `<title>Overworld for Claude Code: trailer</title>` +
     `<style>text{font-family:${SANS}}${css}` +
     `@media (prefers-reduced-motion:reduce){*{animation:none!important}[class^="tr"]{opacity:0}.trfinal,.trfinal *{opacity:1!important;transform:none!important}}</style>` +

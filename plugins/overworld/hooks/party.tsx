@@ -54,7 +54,7 @@ const CAST: ReadonlyArray<[RegExp, MobName]> = [
   [/test|qa|e2e|lint|build|check/i, 'creeper'],
   [/fetch|web|research|search|docs/i, 'bee'],
 ]
-const SPARES: readonly MobName[] = ['axolotl', 'frog', 'cat', 'enderman', 'strider']
+const SPARES: readonly MobName[] = ['axolotl', 'frog', 'cat', 'enderman', 'strider', 'armadillo']
 
 export function mobFor(type: string): MobName {
   const hit = CAST.find(([pattern]) => pattern.test(type))

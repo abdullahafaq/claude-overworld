@@ -2,7 +2,7 @@
 // the sand, fish go by, and an axolotl hangs out with a glow squid.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, light, rect, ridge, specks, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, hills, light, rect, specks, svg, terrain } from '../pixels'
 import { coral, fish, kelp } from '../props'
 
 function shipwreck(x: number, ground: number): string {
@@ -22,11 +22,11 @@ export function ocean(still = false): string {
   const body =
     rect(0, 0, WIDTH, HEIGHT, water) +
     beams +
-    ridge(heights(25, 220, 90, 61), '#0c2240') +
+    hills(defs, heights(25, 220, 90, 61), '#0c2240', '#123058', 61) +
     fish(300, 260, 6, '#f0a060', 3) + fish(900, 420, 5, '#f2d25a', 17) +
     shipwreck(400, GROUND) +
     kelp(300, GROUND, 330, 0) + kelp(980, GROUND, 360, 1.4) + kelp(1440, GROUND, 300, 2.6) + kelp(1540, GROUND, 240, 0.8) +
-    rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#1c2a44') + rect(0, GROUND, WIDTH, 10, '#2a3a58') +
+    terrain(defs, { top: '#3a4a68', topDark: '#2a3a58', soil: '#1c2a44', specks: ['#22324e', '#18243c', '#2a3a56'] }, 61) +
     coral(200, GROUND, '#e3708f', '#ffa0b8') + coral(820, GROUND, '#f0a060', '#ffc890') + coral(1360, GROUND, '#a77ad8', '#c8a4f0') +
     `<g class="pulse">${light(defs, MOB_LEFT + 150, GROUND - 120, 110, '#4fd8d0', 0.28)}</g>` +
     bubbles +

@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/trailer.svg" width="100%" alt="Overworld trailer: a world generates and the OVERWORLD logo is built block by block; then the command /overworld is typed in a Claude Code window and each of the eight biomes swaps in with a block wipe; then the Party pane slides in and agents spawn as mobs, a creeper blowing up; it ends on a hotbar of all eight biomes and the install command.">
+  <img src="assets/trailer.svg" width="100%" alt="Overworld trailer: a world generates and the OVERWORLD logo is built block by block; then the command /overworld is typed in a Claude Code window and each of the ten biomes swaps in with a block wipe; then the Party pane slides in and agents spawn as mobs, a creeper blowing up; it ends on a hotbar of every biome and the install command.">
 </p>
 
 <h1 align="center">Overworld</h1>
 
 <p align="center">
-  A Claude Code plugin that drops your chat into one of eight pixel biomes,<br>
+  A Claude Code plugin that drops your chat into one of ten pixel biomes,<br>
   and turns every subagent Claude sends out into a mob in your <b>Party</b>.
 </p>
 
@@ -19,11 +19,11 @@
   <br><br>
   <a href="https://github.com/abdullahafaq/claude-overworld/actions/workflows/checks.yml"><img alt="Checks" src="https://img.shields.io/github/actions/workflow/status/abdullahafaq/claude-overworld/checks.yml?branch=main&style=for-the-badge&label=checks&labelColor=3b2a1e"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-5aa83a?style=for-the-badge&labelColor=3b2a1e"></a>
-  <a href="#the-biomes"><img alt="8 biomes" src="https://img.shields.io/badge/biomes-8-c7aaff?style=for-the-badge&labelColor=3b2a1e"></a>
-  <a href="#your-party"><img alt="15 mobs" src="https://img.shields.io/badge/mobs-15-f4a0c0?style=for-the-badge&labelColor=3b2a1e"></a>
+  <a href="#the-biomes"><img alt="10 biomes" src="https://img.shields.io/badge/biomes-10-c7aaff?style=for-the-badge&labelColor=3b2a1e"></a>
+  <a href="#your-party"><img alt="16 mobs" src="https://img.shields.io/badge/mobs-16-f4a0c0?style=for-the-badge&labelColor=3b2a1e"></a>
 </p>
 
-I spend most of my day in the Claude Code desktop app. At some point I noticed I was spending more hours a day in one grey window than I ever spent in the block game I grew up on, and the game had much better views. So now my sessions happen in a cherry grove, or on the sea floor, or in the Nether, and when Claude sends an agent off to dig through my code, a little parrot actually goes and does it.
+I spend most of my day in the Claude Code desktop app and wanted it to feel less like a blank window. Overworld puts a pixel biome behind the chat, recolours the whole app to match, and shows every subagent Claude sends out as a mob, so you can see who's working on what.
 
 Everything you see here is my own pixel art, drawn in code. No textures, sprites or logos from any game.
 
@@ -48,29 +48,33 @@ Accept the marketplace (`y`), choose a scope (**user** means every project gets 
 
 <table>
   <tr>
-    <td width="25%"><img src="assets/biomes/sakura.svg" alt="Sakura Night: cherry trees under a pink moon, swaying lanterns and drifting petals, a fox and a frog by a pond."><br><b>Sakura Night</b><br><code>/overworld sakura</code></td>
-    <td width="25%"><img src="assets/biomes/meadow.svg" alt="Meadow: a sunny morning in the plains, clouds drifting over green hills, a little house, a cat and a bee."><br><b>Meadow</b> · light<br><code>/overworld meadow</code></td>
-    <td width="25%"><img src="assets/biomes/desert.svg" alt="Desert Night: a starry sky over the dunes, a temple with candles, cacti, a creeper and a cat."><br><b>Desert Night</b><br><code>/overworld desert</code></td>
-    <td width="25%"><img src="assets/biomes/aurora.svg" alt="Aurora: northern lights rippling over snowy peaks, spruces and an igloo, a snow fox and a wolf."><br><b>Aurora</b><br><code>/overworld aurora</code></td>
+    <td width="20%"><img src="assets/biomes/sakura.svg" alt="Sakura Night: cherry trees under a pink moon, swaying lanterns and drifting petals, a fox and a frog by a pond."><br><b>Sakura Night</b><br><code>/overworld sakura</code></td>
+    <td width="20%"><img src="assets/biomes/meadow.svg" alt="Meadow: a sunny morning in the plains, clouds drifting over green hills, a little house, a cat and a bee."><br><b>Meadow</b> · light<br><code>/overworld meadow</code></td>
+    <td width="20%"><img src="assets/biomes/jungle.svg" alt="Jungle: giant jungle trees with swaying vines, bamboo, a mossy temple and fireflies, a panda and a parrot."><br><b>Jungle</b><br><code>/overworld jungle</code></td>
+    <td width="20%"><img src="assets/biomes/desert.svg" alt="Desert Night: a starry sky over the dunes, a temple with candles, cacti, a creeper and a cat."><br><b>Desert Night</b><br><code>/overworld desert</code></td>
+    <td width="20%"><img src="assets/biomes/badlands.svg" alt="Badlands: banded terracotta mesas at sunset, an old mineshaft and dead bushes, an armadillo and a wolf."><br><b>Badlands</b><br><code>/overworld badlands</code></td>
   </tr>
   <tr>
-    <td width="25%"><img src="assets/biomes/ocean.svg" alt="Ocean: sunbeams through the water, kelp, coral and a shipwreck on the sea floor, an axolotl and a glow squid."><br><b>Ocean</b><br><code>/overworld ocean</code></td>
-    <td width="25%"><img src="assets/biomes/end.svg" alt="The End: glowing end city towers, crystal pillars, chorus plants, a dragon gliding past and two endermen."><br><b>The End</b><br><code>/overworld end</code></td>
-    <td width="25%"><img src="assets/biomes/nether.svg" alt="Nether: a fortress bridge over lava falls, glowing crimson fungi, a ghast in the haze, a strider and a magma cube."><br><b>Nether</b><br><code>/overworld nether</code></td>
-    <td width="25%"><img src="assets/biomes/deep.svg" alt="Deep Dark: an ancient city lit by soul lanterns and candles, sculk on the floor and the warden standing in the dark."><br><b>Deep Dark</b><br><code>/overworld deep</code></td>
+    <td width="20%"><img src="assets/biomes/aurora.svg" alt="Aurora: northern lights rippling over snowy peaks, spruces and an igloo, a snow fox and a wolf."><br><b>Aurora</b><br><code>/overworld aurora</code></td>
+    <td width="20%"><img src="assets/biomes/ocean.svg" alt="Ocean: sunbeams through the water, kelp, coral and a shipwreck on the sea floor, an axolotl and a glow squid."><br><b>Ocean</b><br><code>/overworld ocean</code></td>
+    <td width="20%"><img src="assets/biomes/end.svg" alt="The End: glowing end city towers, crystal pillars, chorus plants, a dragon gliding past and two endermen."><br><b>The End</b><br><code>/overworld end</code></td>
+    <td width="20%"><img src="assets/biomes/nether.svg" alt="Nether: a fortress bridge over lava falls, glowing crimson fungi, a ghast in the haze, a strider and a magma cube."><br><b>Nether</b><br><code>/overworld nether</code></td>
+    <td width="20%"><img src="assets/biomes/deep.svg" alt="Deep Dark: an ancient city lit by soul lanterns and candles, sculk on the floor and the warden standing in the dark."><br><b>Deep Dark</b><br><code>/overworld deep</code></td>
   </tr>
 </table>
 
-Each one is a moving scene behind the conversation *and* a full recolour of the app (panels, text, links, code, diffs). Seven are dark, Meadow is the light one. Here's what's going on in each:
+Each one is a moving scene behind the conversation *and* a full recolour of the app (panels, text, links, code, diffs). Nine are dark, Meadow is the light one. Here's what's going on in each:
 
-- **Sakura Night** · pink. My default. A pink moon over cherry trees, paper lanterns swinging on their strings, petals drifting down at their own pace, the moon wobbling in the pond. A fox and a frog are just vibing.
+- **Sakura Night** · pink. My default. A pink moon over cherry trees, paper lanterns swinging on their strings, petals drifting down at their own pace, the moon reflected in the pond. A fox and a frog by the water.
 - **Meadow** · green, light. A sunny morning in the plains: clouds rolling across, a tiny house, flowers in the grass, a cat, and a bee that won't sit still.
-- **Desert Night** · gold. A sky full of stars over the dunes and a temple with two candles flickering at the door. A tumbleweed rolls past every minute or so. A creeper is standing next to a cat, which is brave of it.
+- **Jungle** · green. Giant two-wide jungle trees with vines swaying off the canopy, cocoa pods, bamboo, a mossy temple poking out between the trunks, and fireflies. A panda and a parrot.
+- **Desert Night** · gold. A sky full of stars over the dunes and a temple with two candles flickering at the door. A tumbleweed rolls past every minute or so. A creeper and a cat.
+- **Badlands** · orange. Striped terracotta mesas glowing at sunset, an old mineshaft cut into the cliff, dead bushes, dust blowing past. An armadillo and a wolf.
 - **Aurora** · mint. Northern lights breathing over a frozen taiga, snow coming down, an igloo, and a snow fox with a wolf for company.
-- **Ocean** · blue. The sea floor: slow light beams, swaying kelp, coral, a shipwreck, two schools of fish, and an axolotl hanging out with a glow squid that's blowing bubbles.
-- **The End** · violet. End city towers with glowing windows, crystals humming on obsidian pillars, chorus plants, and a dragon that glides across every so often. The two endermen are pretending not to look at you. Don't look back.
-- **Nether** · red. A fortress bridge over a lava sea, two lavafalls, glowstone in the ceiling, crimson fungi with shroomlights, ash floating up, a ghast drifting in the haze. A strider and a magma cube, chilling.
-- **Deep Dark** · black with teal. An ancient city lit by soul lanterns and candles, sculk pulsing along the floor, a shrieker, and the warden, whose chest glows in time with its heartbeat. The one I use at 2am.
+- **Ocean** · blue. The sea floor: slow light beams, swaying kelp, coral, a shipwreck, two schools of fish, an axolotl, and a glow squid with bubbles rising off it.
+- **The End** · violet. End city towers with glowing windows, crystals humming on obsidian pillars, chorus plants, and a dragon that glides across every so often. Two endermen.
+- **Nether** · crimson. A fortress bridge over a lava sea, two lavafalls, glowstone in the ceiling, crimson fungi with shroomlights, ash floating up, a ghast drifting in the haze. A strider and a magma cube.
+- **Deep Dark** · black with teal. An ancient city lit by soul lanterns and candles, sculk pulsing along the floor, a shrieker, and the warden, whose chest glows with its heartbeat. The one I use most late at night.
 
 Every mob bobs and blinks, and the ones with legs shuffle in place.
 
@@ -97,12 +101,12 @@ Who turns up as what:
 - **Fox:** `general-purpose`, the all-rounder.
 - **Parrot:** `Explore`, off scouting the codebase.
 - **Panda:** `Plan`, sitting down to think first.
-- **Wolf:** anything that reviews, audits or checks security. Guards the code.
+- **Wolf:** anything that reviews, audits or checks security.
 - **Creeper:** test, build, lint and e2e runners. If the run fails, it **blew up**.
-- **Bee:** `web-fetch`, research and docs. Brings pages back to the hive.
-- **Axolotl, frog, cat, enderman, strider:** your own custom agents. Each type always gets the same one.
+- **Bee:** `web-fetch`, research and docs.
+- **Axolotl, frog, cat, enderman, strider, armadillo:** your own custom agents. Each type always gets the same one.
 
-Each card shows the tool it's on right now, an XP bar that fills as its context grows, the exact token count from the API, and how long it's been out. **+ trail** opens its last few tool calls. A failed run says so in words, so you never have to tell red from pink.
+Each card shows the tool it's on right now, an XP bar that fills as its context grows, the exact token count from the API, and how long it's been out. **+ trail** opens its last few tool calls. A failed run says so in words, not just in colour.
 
 The pane opens itself the first time an agent spawns. Close it and it stays closed until `/overworld party on`.
 
@@ -110,8 +114,9 @@ The pane opens itself the first time an agent spawns. Close it and it stays clos
 
 ```
 /overworld                  list every biome (the one you're in is marked)
-/overworld <biome>          sakura · meadow · desert · aurora · ocean · end · nether · deep
-/overworld random           surprise me
+/overworld <biome>          sakura · meadow · jungle · desert · badlands
+                            aurora · ocean · end · nether · deep
+/overworld random           pick one at random
 /overworld still            freeze the scene, keep the colours (good on battery)
 /overworld moving           unfreeze
 /overworld party off        close the Party pane for good
@@ -128,18 +133,18 @@ Your biome sticks across sessions. Switched while a chat was already open and no
 
 Every biome is a short TypeScript file and every mob is a few rows of letters, so Claude can change any of it for you. Fork the repo, open it in Claude Code, and say *"use this folder for the overworld plugin instead of the installed one"*. Then just ask:
 
-> *"Give the Meadow a few sheep."* · *"Make Desert Night a sandstorm."* · *"Put a cat in the Deep Dark, it's too lonely."* · *"Recolour the Nether blue, scene and palette."*
+> *"Give the Meadow a few sheep."* · *"Make Desert Night a sandstorm."* · *"Put a cat in the Deep Dark."* · *"Recolour the Nether blue, scene and palette."*
 
 After a change: `/reload-plugins`, then `/overworld <biome>`. Before you share it, `npm run verify` checks it's still readable, calm and safe.
 
-**Crafting recipe: a new biome**
+**Adding a biome**
 
-| Ingredient | Where |
+| What | Where |
 | --- | --- |
 | a palette (4 surfaces, 3 text shades, 5 accents) | `plugins/overworld/hooks/palettes.ts` |
 | a scene, built from the kit and the scenery | `plugins/overworld/hooks/scenes/<id>.ts` (+ `pixels.ts`, `props.ts`) |
 | an entry with a title, blurb and glass tint | `plugins/overworld/hooks/biomes.ts` |
-| **=** a new biome in `/overworld`, the README art and the site | `npm run art` |
+| then re-render the README and site art | `npm run art` |
 
 Mobs live in `mobs.ts`. A mob is a map of letters, one letter per pixel. Here's the fox's head end:
 
@@ -242,15 +247,15 @@ Barely. Scenes step at about eight frames a second instead of sixty, and the Par
 Not your files. It sees what your agents are doing (the tool and the command or path it's on) so it can show you, masks anything secret-looking, and forgets it all when the session ends. No file, network or process access.
 
 **Can I make my own biome?**
-Yes, that's the best bit. See [Mod it yourself](#mod-it-yourself).
+Yes. See [Mod it yourself](#mod-it-yourself).
 
 **Did Mojang make this?**
 No. It's a fan project, see below.
 
 ## Thanks & legal
 
-Made by [Abdullah Afaq](https://github.com/abdullahafaq), for everyone who spent their childhood in a block game and their adulthood in a terminal.
+Made by [Abdullah Afaq](https://github.com/abdullahafaq) and Claude. It's a Claude Code plugin, so that second one was a given.
 
 Overworld is an unofficial fan project inspired by Minecraft. It is **not an official Minecraft product** and is not approved by or associated with Mojang or Microsoft. All mobs, blocks and scenes are original pixel art; no game assets, textures, sounds, fonts or logos are used. It isn't affiliated with Anthropic either.
 
-[MIT licensed](LICENSE). The `make-colors` helper files are Claude Code's own and keep their original terms, see [NOTICE](NOTICE). Go touch some grass (or at least look at some).
+[MIT licensed](LICENSE). The `make-colors` helper files are Claude Code's own and keep their original terms, see [NOTICE](NOTICE).

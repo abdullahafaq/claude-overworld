@@ -2,7 +2,7 @@
 // down, there's an igloo with its door open, and a snow fox and a wolf keep watch.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, rect, ridge, specks, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, heights, hills, rect, ridge, specks, svg, terrain } from '../pixels'
 import { igloo, spruce } from '../props'
 
 export function aurora(still = false): string {
@@ -19,10 +19,10 @@ export function aurora(still = false): string {
     `<g class="breathe" style="animation-delay:-3s"><path d="M200 330 L600 270 L1000 310 L1400 250 L1600 280 L1600 330 L1400 300 L1000 360 L600 320 L200 380Z" fill="${bandB}"/></g>` +
     ridge(heights(20, 380, 130, 41), '#93a6bc') +
     ridge(heights(20, 350, 130, 41), '#2a3a4e') +
-    ridge(heights(20, 230, 70, 45), '#1c2a3a') +
+    hills(defs, heights(20, 230, 70, 45), '#1c2a3a', '#2a3c50', 45) +
     spruce(300, GROUND, 280, '#14221e', '#dfe8f2') + spruce(820, GROUND, 320, '#14221e', '#dfe8f2') + spruce(1480, GROUND, 300, '#14221e', '#dfe8f2') + spruce(160, GROUND, 220, '#18291f', '#dfe8f2') +
     igloo(600, GROUND) +
-    rect(0, GROUND, WIDTH, HEIGHT - GROUND, '#6a7c92') + rect(0, GROUND, WIDTH, 12, '#a8b8ca') +
+    terrain(defs, { top: '#c8d6e4', topDark: '#9aabbe', soil: '#6a7c92', specks: ['#76889e', '#5e7086', '#8294aa'] }, 41) +
     `<g opacity="0.75">${snow}</g>` +
     mob('snowfox', MOB_LEFT, GROUND, 6, 0) + mob('wolf', MOB_LEFT + 108, GROUND, 6, 0.7)
 

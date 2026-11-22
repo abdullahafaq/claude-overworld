@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Overworld: pixel biomes and agent mobs for Claude Code</title>
-<meta name="description" content="A Claude Code desktop mod with eight animated pixel-art biomes behind your chat, and a Party pane where every subagent shows up as a pixel mob.">
+<meta name="description" content="A Claude Code desktop mod with ten animated pixel-art biomes behind your chat, and a Party pane where every subagent shows up as a pixel mob.">
 <link rel="canonical" href="https://abdullahafaq.github.io/claude-overworld/">
 <meta name="theme-color" content="#0d1330">
 <meta name="color-scheme" content="dark">
@@ -14,17 +14,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Overworld">
 <meta property="og:title" content="Overworld: pixel biomes and agent mobs for Claude Code">
-<meta property="og:description" content="Eight animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
+<meta property="og:description" content="Ten animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
 <meta property="og:url" content="https://abdullahafaq.github.io/claude-overworld/">
 <meta property="og:image" content="https://abdullahafaq.github.io/claude-overworld/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the eight biomes resting on a strip of grass and dirt.">
+<meta property="og:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the ten biomes resting on a strip of grass and dirt.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Overworld: pixel biomes and agent mobs for Claude Code">
-<meta name="twitter:description" content="Eight animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
+<meta name="twitter:description" content="Ten animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
 <meta name="twitter:image" content="https://abdullahafaq.github.io/claude-overworld/share.png">
-<meta name="twitter:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the eight biomes resting on a strip of grass and dirt.">
+<meta name="twitter:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the ten biomes resting on a strip of grass and dirt.">
 <link rel="stylesheet" href="site.css">
 <script src="site.js" defer></script>
 </head>
@@ -56,7 +56,7 @@
   <div class="wrap hero-in">
     <h1 id="hero-h" class="wm-h"><svg class="wordmark" viewBox="0 0 528.5 68.5" role="img" aria-labelledby="wm-t"><title id="wm-t">Overworld</title><path style="--i:0" d="M10 0h8.5v8.5h-8.5zM20 0h8.5v8.5h-8.5zM30 0h8.5v8.5h-8.5zM0 10h8.5v8.5h-8.5zM40 10h8.5v8.5h-8.5zM0 20h8.5v8.5h-8.5zM40 20h8.5v8.5h-8.5zM0 30h8.5v8.5h-8.5zM40 30h8.5v8.5h-8.5zM0 40h8.5v8.5h-8.5zM40 40h8.5v8.5h-8.5zM0 50h8.5v8.5h-8.5zM40 50h8.5v8.5h-8.5zM10 60h8.5v8.5h-8.5zM20 60h8.5v8.5h-8.5zM30 60h8.5v8.5h-8.5z" fill="#f4a0c0"/><path style="--i:1" d="M60 0h8.5v8.5h-8.5zM100 0h8.5v8.5h-8.5zM60 10h8.5v8.5h-8.5zM100 10h8.5v8.5h-8.5zM60 20h8.5v8.5h-8.5zM100 20h8.5v8.5h-8.5zM60 30h8.5v8.5h-8.5zM100 30h8.5v8.5h-8.5zM60 40h8.5v8.5h-8.5zM100 40h8.5v8.5h-8.5zM70 50h8.5v8.5h-8.5zM90 50h8.5v8.5h-8.5zM80 60h8.5v8.5h-8.5z" fill="#8fd08a"/><path style="--i:2" d="M120 0h8.5v8.5h-8.5zM130 0h8.5v8.5h-8.5zM140 0h8.5v8.5h-8.5zM150 0h8.5v8.5h-8.5zM160 0h8.5v8.5h-8.5zM120 10h8.5v8.5h-8.5zM120 20h8.5v8.5h-8.5zM120 30h8.5v8.5h-8.5zM130 30h8.5v8.5h-8.5zM140 30h8.5v8.5h-8.5zM150 30h8.5v8.5h-8.5zM120 40h8.5v8.5h-8.5zM120 50h8.5v8.5h-8.5zM120 60h8.5v8.5h-8.5zM130 60h8.5v8.5h-8.5zM140 60h8.5v8.5h-8.5zM150 60h8.5v8.5h-8.5zM160 60h8.5v8.5h-8.5z" fill="#f0c060"/><path style="--i:3" d="M180 0h8.5v8.5h-8.5zM190 0h8.5v8.5h-8.5zM200 0h8.5v8.5h-8.5zM210 0h8.5v8.5h-8.5zM180 10h8.5v8.5h-8.5zM220 10h8.5v8.5h-8.5zM180 20h8.5v8.5h-8.5zM220 20h8.5v8.5h-8.5zM180 30h8.5v8.5h-8.5zM190 30h8.5v8.5h-8.5zM200 30h8.5v8.5h-8.5zM210 30h8.5v8.5h-8.5zM180 40h8.5v8.5h-8.5zM200 40h8.5v8.5h-8.5zM180 50h8.5v8.5h-8.5zM210 50h8.5v8.5h-8.5zM180 60h8.5v8.5h-8.5zM220 60h8.5v8.5h-8.5z" fill="#8fe8c0"/><path style="--i:4" d="M240 0h8.5v8.5h-8.5zM280 0h8.5v8.5h-8.5zM240 10h8.5v8.5h-8.5zM280 10h8.5v8.5h-8.5zM240 20h8.5v8.5h-8.5zM280 20h8.5v8.5h-8.5zM240 30h8.5v8.5h-8.5zM260 30h8.5v8.5h-8.5zM280 30h8.5v8.5h-8.5zM240 40h8.5v8.5h-8.5zM260 40h8.5v8.5h-8.5zM280 40h8.5v8.5h-8.5zM240 50h8.5v8.5h-8.5zM250 50h8.5v8.5h-8.5zM270 50h8.5v8.5h-8.5zM280 50h8.5v8.5h-8.5zM240 60h8.5v8.5h-8.5zM280 60h8.5v8.5h-8.5z" fill="#7ab8ff"/><path style="--i:5" d="M310 0h8.5v8.5h-8.5zM320 0h8.5v8.5h-8.5zM330 0h8.5v8.5h-8.5zM300 10h8.5v8.5h-8.5zM340 10h8.5v8.5h-8.5zM300 20h8.5v8.5h-8.5zM340 20h8.5v8.5h-8.5zM300 30h8.5v8.5h-8.5zM340 30h8.5v8.5h-8.5zM300 40h8.5v8.5h-8.5zM340 40h8.5v8.5h-8.5zM300 50h8.5v8.5h-8.5zM340 50h8.5v8.5h-8.5zM310 60h8.5v8.5h-8.5zM320 60h8.5v8.5h-8.5zM330 60h8.5v8.5h-8.5z" fill="#c7aaff"/><path style="--i:6" d="M360 0h8.5v8.5h-8.5zM370 0h8.5v8.5h-8.5zM380 0h8.5v8.5h-8.5zM390 0h8.5v8.5h-8.5zM360 10h8.5v8.5h-8.5zM400 10h8.5v8.5h-8.5zM360 20h8.5v8.5h-8.5zM400 20h8.5v8.5h-8.5zM360 30h8.5v8.5h-8.5zM370 30h8.5v8.5h-8.5zM380 30h8.5v8.5h-8.5zM390 30h8.5v8.5h-8.5zM360 40h8.5v8.5h-8.5zM380 40h8.5v8.5h-8.5zM360 50h8.5v8.5h-8.5zM390 50h8.5v8.5h-8.5zM360 60h8.5v8.5h-8.5zM400 60h8.5v8.5h-8.5z" fill="#ffa27a"/><path style="--i:7" d="M420 0h8.5v8.5h-8.5zM420 10h8.5v8.5h-8.5zM420 20h8.5v8.5h-8.5zM420 30h8.5v8.5h-8.5zM420 40h8.5v8.5h-8.5zM420 50h8.5v8.5h-8.5zM420 60h8.5v8.5h-8.5zM430 60h8.5v8.5h-8.5zM440 60h8.5v8.5h-8.5zM450 60h8.5v8.5h-8.5zM460 60h8.5v8.5h-8.5z" fill="#5fd3c8"/><path style="--i:8" d="M480 0h8.5v8.5h-8.5zM490 0h8.5v8.5h-8.5zM500 0h8.5v8.5h-8.5zM510 0h8.5v8.5h-8.5zM480 10h8.5v8.5h-8.5zM520 10h8.5v8.5h-8.5zM480 20h8.5v8.5h-8.5zM520 20h8.5v8.5h-8.5zM480 30h8.5v8.5h-8.5zM520 30h8.5v8.5h-8.5zM480 40h8.5v8.5h-8.5zM520 40h8.5v8.5h-8.5zM480 50h8.5v8.5h-8.5zM520 50h8.5v8.5h-8.5zM480 60h8.5v8.5h-8.5zM490 60h8.5v8.5h-8.5zM500 60h8.5v8.5h-8.5zM510 60h8.5v8.5h-8.5z" fill="#f5f5f7"/></svg></h1>
     <p class="lede">Your chat, in a biome.</p>
-    <p class="lede-sub">Eight animated pixel worlds behind Claude Code, and a mob for every agent you send out.</p>
+    <p class="lede-sub">Ten animated pixel worlds behind Claude Code, and a mob for every agent you send out.</p>
     <div class="cmd cmd-hero">
       <code>/plugin install overworld --marketplace abdullahafaq/claude-overworld</code>
       <button class="copy" type="button" data-copy="/plugin install overworld --marketplace abdullahafaq/claude-overworld" hidden>Copy</button>
@@ -69,7 +69,7 @@
   </div>
   <div class="wrap wrap-wide">
     <figure class="film">
-      <img src="trailer.svg" width="1600" height="900" alt="The trailer: each of the eight biomes plays behind a Claude Code window with the Party pane open, agents spawn in as mobs and fill their XP bars, and it ends on the install command.">
+      <img src="trailer.svg" width="1600" height="900" alt="The trailer: each of the ten biomes plays behind a Claude Code window with the Party pane open, agents spawn in as mobs and fill their XP bars, and it ends on the install command.">
     </figure>
   </div>
   <div class="ground" aria-hidden="true"></div>
@@ -128,7 +128,7 @@
             <li class="agent">
               <img src="mobs/fox.svg" width="40" height="40" alt="fox: general-purpose, running">
               <div>
-                <p class="a-name">general-purpose · sonnet-4-5</p>
+                <p class="a-name">general-purpose · sonnet-5-5</p>
                 <p class="a-task">check every page that uses the nav</p>
                 <p class="a-tool">↳ Read src/components/Nav.tsx</p>
                 <p class="a-xp"><span>XP ▰▰▱▱▱▱▱▱▱▱</span> <small>24.6k · 48s</small></p>
@@ -138,7 +138,7 @@
             <li class="agent">
               <img src="mobs/parrot.svg" width="40" height="40" alt="parrot: Explore, running">
               <div>
-                <p class="a-name">Explore · haiku-4-5</p>
+                <p class="a-name">Explore · haiku-5-5</p>
                 <p class="a-task">find where the header gets its styles</p>
                 <p class="a-tool">↳ Grep "z-index" src/</p>
                 <p class="a-xp"><span>XP ▰▱▱▱▱▱▱▱▱▱</span> <small>8.1k · 41s</small></p>
@@ -148,7 +148,7 @@
             <li class="agent">
               <img src="mobs/bee.svg" width="40" height="40" alt="bee: web-research, running">
               <div>
-                <p class="a-name">web-research · haiku-4-5</p>
+                <p class="a-name">web-research · haiku-5-5</p>
                 <p class="a-task">look up position: sticky support</p>
                 <p class="a-tool">↳ WebFetch developer.mozilla.org</p>
                 <p class="a-xp"><span>XP ▰▱▱▱▱▱▱▱▱▱</span> <small>6.2k · 22s</small></p>
@@ -172,14 +172,16 @@
       <div class="hotbar" role="radiogroup" aria-label="Choose a biome">
         <button type="button" role="radio" aria-checked="true" tabindex="0" data-id="sakura" style="--c:#f4a0c0"><img src="biomes/sakura-still.svg" alt="" width="64" height="64"><span class="sr">Sakura Night</span><i aria-hidden="true">1</i></button>
         <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="meadow" style="--c:#8fd08a"><img src="biomes/meadow-still.svg" alt="" width="64" height="64"><span class="sr">Meadow</span><i aria-hidden="true">2</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="desert" style="--c:#f0c060"><img src="biomes/desert-still.svg" alt="" width="64" height="64"><span class="sr">Desert Night</span><i aria-hidden="true">3</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="aurora" style="--c:#8fe8c0"><img src="biomes/aurora-still.svg" alt="" width="64" height="64"><span class="sr">Aurora</span><i aria-hidden="true">4</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="ocean" style="--c:#7ab8ff"><img src="biomes/ocean-still.svg" alt="" width="64" height="64"><span class="sr">Ocean</span><i aria-hidden="true">5</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="end" style="--c:#c7aaff"><img src="biomes/end-still.svg" alt="" width="64" height="64"><span class="sr">The End</span><i aria-hidden="true">6</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="nether" style="--c:#ffa27a"><img src="biomes/nether-still.svg" alt="" width="64" height="64"><span class="sr">Nether</span><i aria-hidden="true">7</i></button>
-        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="deep" style="--c:#5fd3c8"><img src="biomes/deep-still.svg" alt="" width="64" height="64"><span class="sr">Deep Dark</span><i aria-hidden="true">8</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="jungle" style="--c:#a6e06a"><img src="biomes/jungle-still.svg" alt="" width="64" height="64"><span class="sr">Jungle</span><i aria-hidden="true">3</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="desert" style="--c:#f0c060"><img src="biomes/desert-still.svg" alt="" width="64" height="64"><span class="sr">Desert Night</span><i aria-hidden="true">4</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="badlands" style="--c:#f2955a"><img src="biomes/badlands-still.svg" alt="" width="64" height="64"><span class="sr">Badlands</span><i aria-hidden="true">5</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="aurora" style="--c:#8fe8c0"><img src="biomes/aurora-still.svg" alt="" width="64" height="64"><span class="sr">Aurora</span><i aria-hidden="true">6</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="ocean" style="--c:#7ab8ff"><img src="biomes/ocean-still.svg" alt="" width="64" height="64"><span class="sr">Ocean</span><i aria-hidden="true">7</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="end" style="--c:#c7aaff"><img src="biomes/end-still.svg" alt="" width="64" height="64"><span class="sr">The End</span><i aria-hidden="true">8</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="nether" style="--c:#ff7a85"><img src="biomes/nether-still.svg" alt="" width="64" height="64"><span class="sr">Nether</span><i aria-hidden="true">9</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="deep" style="--c:#5fd3c8"><img src="biomes/deep-still.svg" alt="" width="64" height="64"><span class="sr">Deep Dark</span><i aria-hidden="true">0</i></button>
       </div>
-      <p class="hotbar-hint">Arrow keys move along the hotbar. Number keys 1 to 8 jump straight there.</p>
+      <p class="hotbar-hint">Arrow keys move along the hotbar. Number keys 1 to 9 and 0 jump straight there.</p>
     </div>
 
     <div class="biome-info panel" aria-live="polite">
@@ -218,6 +220,7 @@
         <li><span class="slot"><img src="mobs/cat.svg" width="44" height="44" alt="A cat"></span><span>Cat</span></li>
         <li><span class="slot"><img src="mobs/enderman.svg" width="44" height="44" alt="An enderman"></span><span>Enderman</span></li>
         <li><span class="slot"><img src="mobs/strider.svg" width="44" height="44" alt="A strider"></span><span>Strider</span></li>
+        <li><span class="slot"><img src="mobs/armadillo.svg" width="44" height="44" alt="An armadillo"></span><span>Armadillo</span></li>
       </ul>
     </div>
 
@@ -380,7 +383,7 @@
       </ul>
     </div>
     <p>Unofficial fan project, inspired by Minecraft. Not an official Minecraft product, and not approved by or associated with Mojang or Microsoft. Not affiliated with Anthropic.</p>
-    <p>Built by <a href="https://github.com/abdullahafaq">Abdullah Afaq</a>. MIT licensed. Go touch grass.</p>
+    <p>Made by <a href="https://github.com/abdullahafaq">Abdullah Afaq</a> and Claude (it's a Claude Code plugin, so that one was a given). MIT licensed.</p>
   </div>
 </footer>
 </body>

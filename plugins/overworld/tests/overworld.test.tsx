@@ -27,7 +27,7 @@ test('/overworld lists every biome', async ($, on) => {
   await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true })
 
   const listed = await $.command.run(typed(''))
-  for (const name of ['Sakura Night', 'Meadow', 'Desert Night', 'Aurora', 'Ocean', 'The End', 'Nether', 'Deep Dark']) {
+  for (const name of ['Sakura Night', 'Meadow', 'Jungle', 'Desert Night', 'Badlands', 'Aurora', 'Ocean', 'The End', 'Nether', 'Deep Dark']) {
     expect(listed.text).toContain(name)
   }
 })

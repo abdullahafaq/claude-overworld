@@ -272,6 +272,21 @@ export const MOBS = {
     paint: { B: '#1f3a48', b: '#152a35', T: '#4fe3d6', S: '#4fe3d6' },
     skin: '#1f3a48',
   },
+  armadillo: {
+    name: 'an armadillo',
+    rows: [
+      '....BBBBBB....',
+      '..BBbBBbBBB...',
+      '.BBBBBBBBBBHH.',
+      'BBbBBbBBbBHEHH',
+      'BBBBBBBBBBHHHP',
+      '.bbbbbbbbbb...',
+      '..LL.....LL...',
+    ],
+    paint: { B: '#c98a74', b: '#9a5e4c', H: '#e0a890', E: '#1a1a1a', P: '#d87a8a', L: '#7a4a3a' },
+    skin: '#e0a890',
+    legs: { count: 1, step: ['...LL....LL...'] },
+  },
   magma: {
     name: 'a magma cube',
     rows: ['MMOMMOMM', 'MMMMMMMM', 'OYMMMMYO', 'MRYMMYRM', 'MMMMMMMM', 'MMOOOOMM', 'OMMMMMMO', 'MMMMOMMM'],

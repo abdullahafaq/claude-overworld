@@ -2,7 +2,7 @@
 // crimson fungi glow, a ghast drifts in the haze, and a strider and a magma cube chill by the lava.
 
 import { mob } from '../mobs'
-import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, ceiling, heights, light, rect, ridge, specks, svg } from '../pixels'
+import { Defs, GROUND, HEIGHT, MOB_LEFT, WIDTH, ceiling, heights, hills, light, rect, specks, svg, terrain } from '../pixels'
 import { fungus } from '../props'
 
 function lavafall(defs: Defs, x: number, w: number, bottom: number): string {
@@ -35,7 +35,7 @@ export function nether(still = false): string {
     `<g class="breathe">${light(defs, 420, 90, 80, '#ffd27a', 0.6)}${light(defs, 1080, 110, 80, '#ffd27a', 0.6)}</g>` +
     rect(398, 70, 44, 30, '#ffd27a') + rect(430, 96, 26, 18, '#ffd27a') + rect(1060, 94, 40, 26, '#ffd27a') +
     ghast() +
-    ridge(heights(25, 300, 90, 73), '#3a1614') +
+    hills(defs, heights(25, 300, 90, 73), '#3a1614', '#4a1d1a', 73) +
     light(defs, 800, 620, 700, '#a03a20', 0.25) +
     bridge() +
     lavafall(defs, 300, 18, 400) + lavafall(defs, 1500, 24, GROUND) +
@@ -43,7 +43,7 @@ export function nether(still = false): string {
     `<g class="pulse" style="animation-delay:-1.6s">${light(defs, 990, 690, 160, '#a064f0', 0.3)}</g>` +
     rect(944, 560, 92, 220, '#1d1228') + rect(958, 574, 64, 206, '#8f62e0', 'opacity="0.85"') +
     fungus(defs, 690, GROUND, 140, '#a8283a') + fungus(defs, 220, GROUND, 170, '#9a2234') +
-    rect(0, GROUND, WIDTH, 50, '#4a1d19') + rect(0, GROUND + 50, WIDTH, HEIGHT - GROUND - 50, lavaSea) +
+    terrain(defs, { top: '#8a2a3a', topDark: '#5e1c28', soil: '#4a1d19', specks: ['#5a2420', '#3e1614', '#62281f'], tufts: '#b0303f' }, 73) + rect(0, GROUND + 50, WIDTH, HEIGHT - GROUND - 50, lavaSea) +
     light(defs, 800, HEIGHT, 520, '#ff7832', 0.3) +
     ash +
     mob('strider', MOB_LEFT, GROUND, 6, 0) + mob('magma', MOB_LEFT + 100, GROUND, 6, 1.1)
