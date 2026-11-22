@@ -1,0 +1,30 @@
+name: Bug report
+description: Something looks wrong, reads badly or doesn't work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: And what did you expect instead? A screenshot helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: biome
+    attributes:
+      label: Which biome?
+      placeholder: e.g. Ocean
+  - type: input
+    id: version
+    attributes:
+      label: Claude Code version
+      placeholder: Help → About, or `claude --version`
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where?
+      options:
+        - Desktop app (Code tab)
+        - Terminal
+        - VS Code
+        - Somewhere else

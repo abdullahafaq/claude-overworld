@@ -1,0 +1,11 @@
+{
+  "name": "overworld",
+  "version": "1.0.0",
+  "description": "Eight pixel biomes behind your Claude Code chat, and every subagent shows up as a mob in its own pane.",
+  "author": { "name": "Abdullah Afaq", "url": "https://github.com/abdullahafaq" },
+  "homepage": "https://abdullahafaq.github.io/claude-overworld/",
+  "repository": "https://github.com/abdullahafaq/claude-overworld",
+  "license": "MIT",
+  "keywords": ["theme", "pixel-art", "backdrop", "subagents", "agents", "pane", "desktop", "mod"],
+  "types": "./types/index.d.ts"
+}

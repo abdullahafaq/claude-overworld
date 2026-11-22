@@ -1,0 +1,11 @@
+name: Biome or mob idea
+description: A new biome, a new mob, or a detail you'd love to see
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What would it look like? What's happening in it? Colours, mood, which mobs.
+    validations:
+      required: true

@@ -1,0 +1,20 @@
+Overworld for Claude Code
+Copyright (c) 2026 Abdullah Afaq. Released under the MIT License (see LICENSE).
+
+Third-party files
+-----------------
+plugins/overworld/hooks/make-colors.js
+plugins/overworld/hooks/make-colors.d.ts
+  Claude Code's colour helper, copied unchanged from the plugin-authoring kit that ships with
+  Claude Code, as its guide asks mods to do. They keep Anthropic's original terms and are not
+  covered by this project's MIT License.
+
+Trademarks
+----------
+This is an unofficial fan project inspired by Minecraft. It is not an official Minecraft product,
+and is not approved by or associated with Mojang or Microsoft. Minecraft is a trademark of Mojang
+Synergies AB. Every pixel in this repository is original art; no game assets, textures, sounds,
+fonts or logos are used.
+
+It is also not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of
+Anthropic, PBC.

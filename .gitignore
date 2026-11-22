@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+# Claude Code lays the API types here when it loads the mod; they're per-machine, so they stay out of git.
+plugins/overworld/.claude-plugin/types/
+*.log

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Overworld: pixel biomes and agent mobs for Claude Code</title>
+<meta name="description" content="A Claude Code desktop mod with eight animated pixel-art biomes behind your chat, and a Party pane where every subagent shows up as a pixel mob.">
+<link rel="canonical" href="https://abdullahafaq.github.io/claude-overworld/">
+<meta name="theme-color" content="#0d1330">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Overworld">
+<meta property="og:title" content="Overworld: pixel biomes and agent mobs for Claude Code">
+<meta property="og:description" content="Eight animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
+<meta property="og:url" content="https://abdullahafaq.github.io/claude-overworld/">
+<meta property="og:image" content="https://abdullahafaq.github.io/claude-overworld/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the eight biomes resting on a strip of grass and dirt.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Overworld: pixel biomes and agent mobs for Claude Code">
+<meta name="twitter:description" content="Eight animated pixel biomes behind your Claude Code chat, and a mob for every agent.">
+<meta name="twitter:image" content="https://abdullahafaq.github.io/claude-overworld/share.png">
+<meta name="twitter:image:alt" content="The pixel OVERWORLD wordmark in a starry night sky, above a hotbar of the eight biomes resting on a strip of grass and dirt.">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Overworld, back to top">
+      <img src="icon.svg" width="28" height="28" alt="">
+      <span>Overworld</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#biomes">Biomes</a></li>
+        <li><a href="#mobs">Party</a></li>
+        <li><a href="#safe">Safety</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-go btn-sm" href="#install">Install</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <span class="moon" aria-hidden="true"></span>
+  <div class="wrap hero-in">
+    <h1 id="hero-h" class="wm-h"><svg class="wordmark" viewBox="0 0 528.5 68.5" role="img" aria-labelledby="wm-t"><title id="wm-t">Overworld</title><path style="--i:0" d="M10 0h8.5v8.5h-8.5zM20 0h8.5v8.5h-8.5zM30 0h8.5v8.5h-8.5zM0 10h8.5v8.5h-8.5zM40 10h8.5v8.5h-8.5zM0 20h8.5v8.5h-8.5zM40 20h8.5v8.5h-8.5zM0 30h8.5v8.5h-8.5zM40 30h8.5v8.5h-8.5zM0 40h8.5v8.5h-8.5zM40 40h8.5v8.5h-8.5zM0 50h8.5v8.5h-8.5zM40 50h8.5v8.5h-8.5zM10 60h8.5v8.5h-8.5zM20 60h8.5v8.5h-8.5zM30 60h8.5v8.5h-8.5z" fill="#f4a0c0"/><path style="--i:1" d="M60 0h8.5v8.5h-8.5zM100 0h8.5v8.5h-8.5zM60 10h8.5v8.5h-8.5zM100 10h8.5v8.5h-8.5zM60 20h8.5v8.5h-8.5zM100 20h8.5v8.5h-8.5zM60 30h8.5v8.5h-8.5zM100 30h8.5v8.5h-8.5zM60 40h8.5v8.5h-8.5zM100 40h8.5v8.5h-8.5zM70 50h8.5v8.5h-8.5zM90 50h8.5v8.5h-8.5zM80 60h8.5v8.5h-8.5z" fill="#8fd08a"/><path style="--i:2" d="M120 0h8.5v8.5h-8.5zM130 0h8.5v8.5h-8.5zM140 0h8.5v8.5h-8.5zM150 0h8.5v8.5h-8.5zM160 0h8.5v8.5h-8.5zM120 10h8.5v8.5h-8.5zM120 20h8.5v8.5h-8.5zM120 30h8.5v8.5h-8.5zM130 30h8.5v8.5h-8.5zM140 30h8.5v8.5h-8.5zM150 30h8.5v8.5h-8.5zM120 40h8.5v8.5h-8.5zM120 50h8.5v8.5h-8.5zM120 60h8.5v8.5h-8.5zM130 60h8.5v8.5h-8.5zM140 60h8.5v8.5h-8.5zM150 60h8.5v8.5h-8.5zM160 60h8.5v8.5h-8.5z" fill="#f0c060"/><path style="--i:3" d="M180 0h8.5v8.5h-8.5zM190 0h8.5v8.5h-8.5zM200 0h8.5v8.5h-8.5zM210 0h8.5v8.5h-8.5zM180 10h8.5v8.5h-8.5zM220 10h8.5v8.5h-8.5zM180 20h8.5v8.5h-8.5zM220 20h8.5v8.5h-8.5zM180 30h8.5v8.5h-8.5zM190 30h8.5v8.5h-8.5zM200 30h8.5v8.5h-8.5zM210 30h8.5v8.5h-8.5zM180 40h8.5v8.5h-8.5zM200 40h8.5v8.5h-8.5zM180 50h8.5v8.5h-8.5zM210 50h8.5v8.5h-8.5zM180 60h8.5v8.5h-8.5zM220 60h8.5v8.5h-8.5z" fill="#8fe8c0"/><path style="--i:4" d="M240 0h8.5v8.5h-8.5zM280 0h8.5v8.5h-8.5zM240 10h8.5v8.5h-8.5zM280 10h8.5v8.5h-8.5zM240 20h8.5v8.5h-8.5zM280 20h8.5v8.5h-8.5zM240 30h8.5v8.5h-8.5zM260 30h8.5v8.5h-8.5zM280 30h8.5v8.5h-8.5zM240 40h8.5v8.5h-8.5zM260 40h8.5v8.5h-8.5zM280 40h8.5v8.5h-8.5zM240 50h8.5v8.5h-8.5zM250 50h8.5v8.5h-8.5zM270 50h8.5v8.5h-8.5zM280 50h8.5v8.5h-8.5zM240 60h8.5v8.5h-8.5zM280 60h8.5v8.5h-8.5z" fill="#7ab8ff"/><path style="--i:5" d="M310 0h8.5v8.5h-8.5zM320 0h8.5v8.5h-8.5zM330 0h8.5v8.5h-8.5zM300 10h8.5v8.5h-8.5zM340 10h8.5v8.5h-8.5zM300 20h8.5v8.5h-8.5zM340 20h8.5v8.5h-8.5zM300 30h8.5v8.5h-8.5zM340 30h8.5v8.5h-8.5zM300 40h8.5v8.5h-8.5zM340 40h8.5v8.5h-8.5zM300 50h8.5v8.5h-8.5zM340 50h8.5v8.5h-8.5zM310 60h8.5v8.5h-8.5zM320 60h8.5v8.5h-8.5zM330 60h8.5v8.5h-8.5z" fill="#c7aaff"/><path style="--i:6" d="M360 0h8.5v8.5h-8.5zM370 0h8.5v8.5h-8.5zM380 0h8.5v8.5h-8.5zM390 0h8.5v8.5h-8.5zM360 10h8.5v8.5h-8.5zM400 10h8.5v8.5h-8.5zM360 20h8.5v8.5h-8.5zM400 20h8.5v8.5h-8.5zM360 30h8.5v8.5h-8.5zM370 30h8.5v8.5h-8.5zM380 30h8.5v8.5h-8.5zM390 30h8.5v8.5h-8.5zM360 40h8.5v8.5h-8.5zM380 40h8.5v8.5h-8.5zM360 50h8.5v8.5h-8.5zM390 50h8.5v8.5h-8.5zM360 60h8.5v8.5h-8.5zM400 60h8.5v8.5h-8.5z" fill="#ffa27a"/><path style="--i:7" d="M420 0h8.5v8.5h-8.5zM420 10h8.5v8.5h-8.5zM420 20h8.5v8.5h-8.5zM420 30h8.5v8.5h-8.5zM420 40h8.5v8.5h-8.5zM420 50h8.5v8.5h-8.5zM420 60h8.5v8.5h-8.5zM430 60h8.5v8.5h-8.5zM440 60h8.5v8.5h-8.5zM450 60h8.5v8.5h-8.5zM460 60h8.5v8.5h-8.5z" fill="#5fd3c8"/><path style="--i:8" d="M480 0h8.5v8.5h-8.5zM490 0h8.5v8.5h-8.5zM500 0h8.5v8.5h-8.5zM510 0h8.5v8.5h-8.5zM480 10h8.5v8.5h-8.5zM520 10h8.5v8.5h-8.5zM480 20h8.5v8.5h-8.5zM520 20h8.5v8.5h-8.5zM480 30h8.5v8.5h-8.5zM520 30h8.5v8.5h-8.5zM480 40h8.5v8.5h-8.5zM520 40h8.5v8.5h-8.5zM480 50h8.5v8.5h-8.5zM520 50h8.5v8.5h-8.5zM480 60h8.5v8.5h-8.5zM490 60h8.5v8.5h-8.5zM500 60h8.5v8.5h-8.5zM510 60h8.5v8.5h-8.5z" fill="#f5f5f7"/></svg></h1>
+    <p class="lede">Your chat, in a biome.</p>
+    <p class="lede-sub">Eight animated pixel worlds behind Claude Code, and a mob for every agent you send out.</p>
+    <div class="cmd cmd-hero">
+      <code>/plugin install overworld --marketplace abdullahafaq/claude-overworld</code>
+      <button class="copy" type="button" data-copy="/plugin install overworld --marketplace abdullahafaq/claude-overworld" hidden>Copy</button>
+    </div>
+    <div class="hero-row">
+      <a class="btn btn-go" href="#install">How to install</a>
+      <a class="btn btn-stone" href="#biomes">Try a biome</a>
+    </div>
+    <p class="hero-note"><span class="sign">Needs the desktop app</span> <span>Free and MIT licensed.</span></p>
+  </div>
+  <div class="wrap wrap-wide">
+    <figure class="film">
+      <img src="trailer.svg" width="1600" height="900" alt="The trailer: each of the eight biomes plays behind a Claude Code window with the Party pane open, agents spawn in as mobs and fill their XP bars, and it ends on the install command.">
+    </figure>
+  </div>
+  <div class="ground" aria-hidden="true"></div>
+</section>
+
+<section class="sec sec-top" id="biomes" aria-labelledby="biomes-h">
+  <div class="wrap">
+    <p class="label">Biomes</p>
+    <h2 id="biomes-h">Pick a biome and the whole app moves in.</h2>
+    <p class="intro">Every biome is a moving scene plus a full colour palette. Switch, and the chat, the panels and the accent all follow. Try it on the hotbar below.</p>
+  </div>
+
+  <div class="wrap wrap-wide">
+    <figure class="demo" id="demo" data-biome="sakura" aria-labelledby="demo-cap">
+      <div class="demo-bar" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <span>fix-mobile-nav</span>
+        <b>Party</b>
+      </div>
+      <div class="demo-body">
+        <div class="stage">
+          <div class="scene">
+            <picture class="layer is-on">
+              <source media="(prefers-reduced-motion: reduce)" srcset="biomes/sakura-still.svg">
+              <img src="biomes/sakura.svg" width="1600" height="1000" alt="Sakura Night: cherry trees under a pink moon, swaying lanterns and drifting petals, a fox and a frog by a pond">
+            </picture>
+            <picture class="layer" aria-hidden="true">
+              <img alt="">
+            </picture>
+          </div>
+
+          <div class="chat glass">
+            <div class="msg-user">the nav overlaps the logo on mobile, can you fix it?</div>
+            <div class="msg-claude">
+              <span class="dot" aria-hidden="true"></span>
+              <p>On it. I'll send a parrot to find where the header gets its styles, a fox to check the other pages, and a bee for the docs.</p>
+            </div>
+            <div class="tool">
+              <span class="tool-name">Edit</span> <span class="tool-arg">src/components/Nav.css</span>
+              <div class="diff" role="group" aria-label="Two-line diff">
+                <div class="del"><span aria-hidden="true">-</span> .nav { position: absolute; }</div>
+                <div class="add"><span aria-hidden="true">+</span> .nav { position: sticky; top: 0; }</div>
+              </div>
+            </div>
+            <div class="msg-claude">
+              <span class="dot" aria-hidden="true"></span>
+              <p>Sticky now, so it sits above the logo instead of on it. The creeper blew up on one old snapshot test, so I'm updating that next.</p>
+            </div>
+            <div class="composer" aria-hidden="true">Reply to Claude…</div>
+          </div>
+        </div>
+
+        <aside class="pane" aria-label="Party pane">
+          <p class="pane-h"><b>PARTY</b><span>3 out · 61.4k tokens</span></p>
+          <ul class="party">
+            <li class="agent">
+              <img src="mobs/fox.svg" width="40" height="40" alt="fox: general-purpose, running">
+              <div>
+                <p class="a-name">general-purpose · sonnet-4-5</p>
+                <p class="a-task">check every page that uses the nav</p>
+                <p class="a-tool">↳ Read src/components/Nav.tsx</p>
+                <p class="a-xp"><span>XP ▰▰▱▱▱▱▱▱▱▱</span> <small>24.6k · 48s</small></p>
+                <details class="trail"><summary>trail</summary><ol><li>Glob src/pages/**/*.tsx</li><li>Grep "&lt;Nav" src/pages</li><li>Read src/components/Nav.tsx</li></ol></details>
+              </div>
+            </li>
+            <li class="agent">
+              <img src="mobs/parrot.svg" width="40" height="40" alt="parrot: Explore, running">
+              <div>
+                <p class="a-name">Explore · haiku-4-5</p>
+                <p class="a-task">find where the header gets its styles</p>
+                <p class="a-tool">↳ Grep "z-index" src/</p>
+                <p class="a-xp"><span>XP ▰▱▱▱▱▱▱▱▱▱</span> <small>8.1k · 41s</small></p>
+                <details class="trail"><summary>trail</summary><ol><li>Glob **/*.css</li><li>Grep "z-index" src/</li></ol></details>
+              </div>
+            </li>
+            <li class="agent">
+              <img src="mobs/bee.svg" width="40" height="40" alt="bee: web-research, running">
+              <div>
+                <p class="a-name">web-research · haiku-4-5</p>
+                <p class="a-task">look up position: sticky support</p>
+                <p class="a-tool">↳ WebFetch developer.mozilla.org</p>
+                <p class="a-xp"><span>XP ▰▱▱▱▱▱▱▱▱▱</span> <small>6.2k · 22s</small></p>
+                <details class="trail"><summary>trail</summary><ol><li>WebSearch css sticky header</li><li>WebFetch developer.mozilla.org</li></ol></details>
+              </div>
+            </li>
+          </ul>
+          <p class="pane-sub">BACK AT SPAWN · 3 · 1 didn't make it</p>
+          <ul class="spawn">
+            <li><img src="mobs/panda.svg" width="32" height="32" alt="panda: Plan, done"><div><p class="a-name">Plan</p><p class="a-task">plan the nav fix · 12.4k · 1m 02s</p></div></li>
+            <li><img src="mobs/wolf.svg" width="32" height="32" alt="wolf: code-reviewer, done"><div><p class="a-name">code-reviewer</p><p class="a-task">review the header diff · 7.3k · 35s</p></div></li>
+            <li class="is-down"><img src="mobs/creeper.svg" width="32" height="32" alt="creeper: test-runner, blew up"><div><p class="a-name">test-runner · blew up</p><p class="a-task">run the nav tests · 2.8k · 18s</p></div></li>
+          </ul>
+        </aside>
+      </div>
+      <figcaption id="demo-cap" class="sr">A mock of the Claude Code desktop app wearing the <span data-title>Sakura Night</span> biome, with a short chat on frosted glass and the Party pane showing three agents out and three back at spawn.</figcaption>
+    </figure>
+
+    <div class="picker" hidden>
+      <p class="tooltip sign" aria-hidden="true" data-title>Sakura Night</p>
+      <div class="hotbar" role="radiogroup" aria-label="Choose a biome">
+        <button type="button" role="radio" aria-checked="true" tabindex="0" data-id="sakura" style="--c:#f4a0c0"><img src="biomes/sakura-still.svg" alt="" width="64" height="64"><span class="sr">Sakura Night</span><i aria-hidden="true">1</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="meadow" style="--c:#8fd08a"><img src="biomes/meadow-still.svg" alt="" width="64" height="64"><span class="sr">Meadow</span><i aria-hidden="true">2</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="desert" style="--c:#f0c060"><img src="biomes/desert-still.svg" alt="" width="64" height="64"><span class="sr">Desert Night</span><i aria-hidden="true">3</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="aurora" style="--c:#8fe8c0"><img src="biomes/aurora-still.svg" alt="" width="64" height="64"><span class="sr">Aurora</span><i aria-hidden="true">4</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="ocean" style="--c:#7ab8ff"><img src="biomes/ocean-still.svg" alt="" width="64" height="64"><span class="sr">Ocean</span><i aria-hidden="true">5</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="end" style="--c:#c7aaff"><img src="biomes/end-still.svg" alt="" width="64" height="64"><span class="sr">The End</span><i aria-hidden="true">6</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="nether" style="--c:#ffa27a"><img src="biomes/nether-still.svg" alt="" width="64" height="64"><span class="sr">Nether</span><i aria-hidden="true">7</i></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-id="deep" style="--c:#5fd3c8"><img src="biomes/deep-still.svg" alt="" width="64" height="64"><span class="sr">Deep Dark</span><i aria-hidden="true">8</i></button>
+      </div>
+      <p class="hotbar-hint">Arrow keys move along the hotbar. Number keys 1 to 8 jump straight there.</p>
+    </div>
+
+    <div class="biome-info panel" aria-live="polite">
+      <div>
+        <h3 data-title>Sakura Night</h3>
+        <p data-blurb>Pink · dark. Cherry trees under a pink moon, lanterns and drifting petals.</p>
+      </div>
+      <div class="cmd">
+        <code data-cmd>/overworld sakura</code>
+        <button class="copy" type="button" data-copy="/overworld sakura" hidden>Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="mobs" aria-labelledby="mobs-h">
+  <div class="wrap">
+    <p class="label">The party</p>
+    <h2 id="mobs-h">Every agent spawns as a mob.</h2>
+    <p class="intro">When Claude sends out a subagent, it turns up in the Party pane as a pixel mob. You see what it's doing while it does it, and it heads back to spawn when it's done.</p>
+
+    <ul class="mob-grid">
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/fox.svg" width="64" height="64" alt="A pixel fox"></span><div><h3>general-purpose</h3><p>The fox. Does a bit of everything, digs through any file you point it at.</p></div></li>
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/parrot.svg" width="64" height="64" alt="A pixel parrot"></span><div><h3>Explore</h3><p>The parrot. Reads the whole codebase and repeats back the bits that matter.</p></div></li>
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/panda.svg" width="64" height="64" alt="A pixel panda"></span><div><h3>Plan</h3><p>The panda. Sits down, chews on it for a while, hands you a plan.</p></div></li>
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/wolf.svg" width="64" height="64" alt="A pixel wolf"></span><div><h3>Review &amp; security</h3><p>The wolf. Sniffs out bugs and leaked keys. Hunts in packs.</p></div></li>
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/creeper.svg" width="64" height="64" alt="A pixel creeper"></span><div><h3>Tests &amp; builds</h3><p>The creeper. Runs your tests. If they fail, it doesn't say failed. It says blew up.</p></div></li>
+      <li class="mob"><span class="slot slot-lg"><img src="mobs/bee.svg" width="64" height="64" alt="A pixel bee"></span><div><h3>Web &amp; research</h3><p>The bee. Flies off to the docs and comes back with what it found.</p></div></li>
+    </ul>
+
+    <div class="spares panel">
+      <p>Your own custom agents get one of these spares, and the same one every time.</p>
+      <ul>
+        <li><span class="slot"><img src="mobs/axolotl.svg" width="44" height="44" alt="An axolotl"></span><span>Axolotl</span></li>
+        <li><span class="slot"><img src="mobs/frog.svg" width="44" height="44" alt="A frog"></span><span>Frog</span></li>
+        <li><span class="slot"><img src="mobs/cat.svg" width="44" height="44" alt="A cat"></span><span>Cat</span></li>
+        <li><span class="slot"><img src="mobs/enderman.svg" width="44" height="44" alt="An enderman"></span><span>Enderman</span></li>
+        <li><span class="slot"><img src="mobs/strider.svg" width="44" height="44" alt="A strider"></span><span>Strider</span></li>
+      </ul>
+    </div>
+
+    <ul class="facts">
+      <li class="panel"><h3>Exact tokens</h3><p>The real count, not a guess. The XP bar fills as it goes and tops out at 100k.</p></li>
+      <li class="panel"><h3>Live tool line</h3><p>After the <code>↳</code>, the tool it's using right now and what it's using it on. Tap <code>+ trail</code> for its recent calls.</p></li>
+      <li class="panel"><h3>A timer</h3><p>Ticks once a second while something runs and the pane is open. Then it stops.</p></li>
+      <li class="panel"><h3>Secrets masked</h3><p>Anything that looks like a key or token turns into •••. Plain text only, cut short.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="make" aria-labelledby="make-h">
+  <div class="wrap">
+    <p class="label">Make it yours</p>
+    <h2 id="make-h">Every mob is a text map.</h2>
+    <p class="intro">One letter, one pixel. Change the letters and you've redrawn it. Or just ask Claude to.</p>
+
+    <div class="map-row">
+      <figure class="map panel">
+        <figcaption><code>hooks/mobs.ts</code></figcaption>
+<pre><code>fox: {
+  rows: [
+    '...........O.O..',
+    '..........OOOOO.',
+    '..........OEOOOO',
+    'WO........OOOWWK',
+    'WOO.OOOOOOOOWWW.',
+    '.OOOOOOOOOOOW...',
+    '..OOOOOOOOOOW...',
+    '..ooooooooooo...',
+    '...KK....KK.....',
+    '...KK....KK.....',
+  ],
+  paint: { O: '#e3772c', o: '#bf5e20',
+           W: '#f5efe6', K: '#2a1e18',
+           E: '#1a1a1a' },
+}</code></pre>
+      </figure>
+      <div class="map-out panel">
+        <span class="slot slot-xl"><img src="mobs/fox.svg" width="200" height="200" alt="The fox the map above draws: orange body, white tail tip and chest, dark legs."></span>
+        <ul class="swatches" aria-label="The fox's paint">
+          <li><i style="--c:#e3772c"></i>O fur</li>
+          <li><i style="--c:#bf5e20"></i>o belly</li>
+          <li><i style="--c:#f5efe6"></i>W white</li>
+          <li><i style="--c:#2a1e18"></i>K legs</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">Things you can just say to Claude</h3>
+    <ul class="prompts">
+      <li>“make the Nether purple”</li>
+      <li>“add a sheep to the Meadow”</li>
+      <li>“give the panda sunglasses”</li>
+      <li>“make me a biome for my home town”</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="install" aria-labelledby="install-h">
+  <div class="wrap">
+    <p class="label">Install</p>
+    <h2 id="install-h">Spawn in with three commands.</h2>
+    <p class="intro">Run these in the Code tab of the Claude Code desktop app. <span class="sign sign-inline">Needs the desktop app</span></p>
+
+    <ol class="steps">
+      <li class="panel">
+        <h3>Install the plugin</h3>
+        <div class="cmd"><code>/plugin install overworld --marketplace abdullahafaq/claude-overworld</code><button class="copy" type="button" data-copy="/plugin install overworld --marketplace abdullahafaq/claude-overworld" hidden>Copy</button></div>
+      </li>
+      <li class="panel">
+        <h3>Pick your spawn</h3>
+        <div class="cmd"><code>/overworld sakura</code><button class="copy" type="button" data-copy="/overworld sakura" hidden>Copy</button></div>
+      </li>
+      <li class="panel">
+        <h3>Look around</h3>
+        <div class="cmd"><code>/overworld</code><button class="copy" type="button" data-copy="/overworld" hidden>Copy</button></div>
+        <p>Lists every biome. Then send an agent out and watch the Party pane.</p>
+      </li>
+    </ol>
+
+    <div class="cheats panel">
+      <h3>All the commands</h3>
+      <dl>
+        <div><dt><code>/overworld &lt;biome&gt;</code></dt><dd>Switch biome</dd></div>
+        <div><dt><code>/overworld random</code></dt><dd>Let the world pick</dd></div>
+        <div><dt><code>/overworld still</code></dt><dd>Stop the motion (<code>/overworld moving</code> to bring it back)</dd></div>
+        <div><dt><code>/overworld party off</code></dt><dd>Hide the Party pane (<code>on</code> to respawn it)</dd></div>
+        <div><dt><code>/overworld off</code></dt><dd>Back to plain Claude Code</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="safe" aria-labelledby="safe-h">
+  <div class="wrap">
+    <p class="label">Readable, calm, safe</p>
+    <h2 id="safe-h">Easy on the eyes, all day long.</h2>
+    <p class="intro">I stare at this all day, so it has to be comfortable to read. A script checks every biome on every push.</p>
+
+    <ul class="stats">
+      <li class="panel"><b>13.3:1</b><span>Main text contrast in the lowest biome. Most go higher.</span></li>
+      <li class="panel"><b>6.4:1</b><span>Softer text, lowest biome. Comfortably past AA.</span></li>
+      <li class="panel"><b>1.4s</b><span>The fastest anything cycles. Nothing flashes.</span></li>
+      <li class="panel"><b>3</b><span>Settings saved: your biome, motion on or off, and whether you hid the pane.</span></li>
+    </ul>
+
+    <ul class="facts">
+      <li class="panel"><h3>Reduce motion</h3><p>If your system asks for less motion, every scene holds still. Or type <code>/overworld still</code>.</p></li>
+      <li class="panel"><h3>Pure SVG</h3><p>Each scene is 12 to 21 KB of vector, with nothing loaded from outside.</p></li>
+      <li class="panel"><h3>No access</h3><p>No network, no files, no processes. It draws pictures and counts tokens.</p></li>
+      <li class="panel"><h3>Cheap to run</h3><p>The pane batches updates and only redraws while agents are working.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap wrap-narrow">
+    <p class="label">FAQ</p>
+    <h2 id="faq-h">Questions, answered.</h2>
+    <div class="faq">
+      <details>
+        <summary>Does it work in the terminal?</summary>
+        <p>No. Backdrops need the Claude Code desktop app, in the Code tab. The terminal doesn't draw them.</p>
+      </details>
+      <details>
+        <summary>Will it slow my laptop down?</summary>
+        <p>It shouldn't. The scenes are small SVGs with slow CSS motion, and the pane only redraws while agents are working. If you want it fully idle, <code>/overworld still</code> stops the motion.</p>
+      </details>
+      <details>
+        <summary>Can I make my own biome?</summary>
+        <p>Yes. A biome is one entry in <code>biomes.ts</code>, one palette in <code>palettes.ts</code> and one scene file. Easiest way: ask Claude to make one with you. The audit script will tell you if the colours are hard to read.</p>
+      </details>
+      <details>
+        <summary>Is it safe?</summary>
+        <p>It has no network, file or process access. It saves three settings and that's it. Anything that looks like a secret is masked before it reaches the pane. The code is all on GitHub if you want to check.</p>
+      </details>
+      <details>
+        <summary>Is this official?</summary>
+        <p>No. It's an unofficial fan project, inspired by Minecraft. It isn't made by or affiliated with Mojang, Microsoft or Anthropic.</p>
+      </details>
+      <details>
+        <summary>Can I turn it off?</summary>
+        <p><code>/overworld off</code> and you're back to plain Claude Code. No creepers were harmed.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top" aria-label="Overworld, back to top"><img src="icon.svg" width="28" height="28" alt=""><span>Overworld</span></a>
+      <ul>
+        <li><a href="https://github.com/abdullahafaq/claude-overworld">GitHub</a></li>
+        <li><a href="https://github.com/abdullahafaq/claude-overworld/blob/main/LICENSE">MIT License</a></li>
+      </ul>
+    </div>
+    <p>Unofficial fan project, inspired by Minecraft. Not an official Minecraft product, and not approved by or associated with Mojang or Microsoft. Not affiliated with Anthropic.</p>
+    <p>Built by <a href="https://github.com/abdullahafaq">Abdullah Afaq</a>. MIT licensed. Go touch grass.</p>
+  </div>
+</footer>
+</body>
+</html>

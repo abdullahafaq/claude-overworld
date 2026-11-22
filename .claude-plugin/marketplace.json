@@ -1,0 +1,12 @@
+{
+  "name": "claude-overworld",
+  "owner": { "name": "Abdullah Afaq", "url": "https://github.com/abdullahafaq" },
+  "metadata": { "description": "Pixel biomes behind your Claude Code chat, and every subagent as a mob." },
+  "plugins": [
+    {
+      "name": "overworld",
+      "source": "./plugins/overworld",
+      "description": "Eight animated pixel biomes for the Claude Code desktop app, switched with /overworld, plus a pane where every subagent shows up as a mob."
+    }
+  ]
+}

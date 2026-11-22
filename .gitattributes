@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+# The generated art is built from the code by scripts/render-art.mjs, so diffs of it aren't worth reading.
+assets/** linguist-generated=true
+docs/biomes/** linguist-generated=true
+docs/mobs/** linguist-generated=true
+docs/trailer.svg linguist-generated=true
+plugins/overworld/hooks/make-colors.js linguist-vendored=true

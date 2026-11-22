@@ -1,0 +1,18 @@
+{
+  "name": "claude-overworld",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eight pixel biomes behind your Claude Code chat, and every subagent as a mob.",
+  "license": "MIT",
+  "author": "Abdullah Afaq (https://github.com/abdullahafaq)",
+  "homepage": "https://abdullahafaq.github.io/claude-overworld/",
+  "repository": { "type": "git", "url": "git+https://github.com/abdullahafaq/claude-overworld.git" },
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "check:biomes": "node --import ./scripts/resolve-ts.mjs scripts/check-biomes.mjs",
+    "art": "node --import ./scripts/resolve-ts.mjs scripts/render-art.mjs",
+    "test": "claude plugin validate plugins/overworld && claude plugin test plugins/overworld",
+    "verify": "npm run check:biomes && npm test"
+  }
+}
