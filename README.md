@@ -17,9 +17,10 @@
   <a href="#commands">Commands</a> ·
   <a href="#mod-it-yourself">Mod it</a>
   <br><br>
-  <a href="https://github.com/abdullahafaq/claude-overworld/actions/workflows/checks.yml"><img alt="Checks" src="https://github.com/abdullahafaq/claude-overworld/actions/workflows/checks.yml/badge.svg"></a>
-  <img alt="MIT" src="https://img.shields.io/badge/MIT-5aa83a?style=for-the-badge&labelColor=3b2a1e">
-  <img alt="8 biomes" src="https://img.shields.io/badge/8_biomes-15_mobs-6b4a2e?style=for-the-badge&labelColor=3b2a1e">
+  <a href="https://github.com/abdullahafaq/claude-overworld/actions/workflows/checks.yml"><img alt="Checks" src="https://img.shields.io/github/actions/workflow/status/abdullahafaq/claude-overworld/checks.yml?branch=main&style=for-the-badge&label=checks&labelColor=3b2a1e"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-5aa83a?style=for-the-badge&labelColor=3b2a1e"></a>
+  <a href="#the-biomes"><img alt="8 biomes" src="https://img.shields.io/badge/biomes-8-c7aaff?style=for-the-badge&labelColor=3b2a1e"></a>
+  <a href="#your-party"><img alt="15 mobs" src="https://img.shields.io/badge/mobs-15-f4a0c0?style=for-the-badge&labelColor=3b2a1e"></a>
 </p>
 
 I spend most of my day in the Claude Code desktop app. At some point I noticed I was spending more hours a day in one grey window than I ever spent in the block game I grew up on, and the game had much better views. So now my sessions happen in a cherry grove, or on the sea floor, or in the Nether, and when Claude sends an agent off to dig through my code, a little parrot actually goes and does it.
